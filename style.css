@@ -57,6 +57,24 @@ body {
     flex: 1; 
 }
 
+.weather-container {
+    text-align: center;
+}
+
+#weather-icon {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+}
+
+#weather-description {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
 #location {
     padding: 5px;
     border: 1px solid #ccc;
@@ -126,26 +144,4 @@ body {
     padding: 10px;
     border: 1px solid #fffefe;
     border-radius: 5px;
-}
-
-
-.additional-weather {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-
-.interactive-forecast-item {
-    cursor: pointer;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.interactive-forecast-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
 }
