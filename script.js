@@ -28,10 +28,57 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>UV Index: ${data.uvi}</p>
             <p>Humidity: ${data.main.humidity}%</p>
             <p>Cloud Cover: ${data.clouds.all}%</p>
-            <p>Visibility: ${data.visibility / 1000} km</p>
         `;
         additionalWeatherDataContainer.innerHTML = additionalWeatherHTML;
     }
+
+
+
+        //update weather data on the 5-Day Forecast tab
+        function updateForecastWeatherData(data) {
+            const { city, list } = data;
+            currentLocationDisplay.innerText = `${city.name}, ${city.country}`;
+        
+            let forecastHTML = `
+                <div class="five-day-forecast-heading">
+                    ${city.name} - 3 Day Weather Forecast
+                </div>
+                <div class="five-day-forecast-grid">
+            `;
+        
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); 
+        
+            list.slice(0, 3).forEach((forecast, index) => {
+                const date = new Date(forecast.dt_txt);
+                date.setHours(0, 0, 0, 0);
+        
+                // Check if forecast date is greater than or equal to today
+                if (date >= today) {
+                    const forecastDate = new Date(date);
+                    forecastDate.setDate(date.getDate() + index);
+        
+                    forecastHTML += `
+                        <div class="weather-block">
+                            <p>Date: ${forecastDate.toDateString()}</p>
+                            <p>Temperature: ${forecast.main.temp}°C</p>
+                            <p>Weather: ${forecast.weather[0].description}</p>
+                            <!-- Add more relevant information here -->
+                        </div>
+                    `;
+                }
+                
+                // Add a new row after 3rd forecast
+                if ((index + 1) % 3 === 0) {
+                    forecastHTML += `</div><div class="five-day-forecast-grid">`;
+                }
+            });
+        
+            forecastHTML += `</div>`;
+            fiveDayForecastContainer.innerHTML = forecastHTML;
+        }
+
+        //update weather data on the 5-Day Forecast tab
 
     async function getWeatherData(location) {
         try {
