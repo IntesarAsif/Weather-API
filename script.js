@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>UV Index: ${data.uvi}</p>
             <p>Humidity: ${data.main.humidity}%</p>
             <p>Cloud Cover: ${data.clouds.all}%</p>
+            
         `;
         additionalWeatherDataContainer.innerHTML = additionalWeatherHTML;
     }
