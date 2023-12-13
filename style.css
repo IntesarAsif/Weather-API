@@ -13,8 +13,12 @@ body {
     background-color: #ffffff;
 }
 
-.left-panel,
-.right-panel {
+.lower-panel {
+    background-image: url('snow.png');
+}
+
+.upper-panel,
+.lower-panel {
     flex: 1; 
     box-sizing: border-box;
     padding: 20px;
@@ -23,7 +27,7 @@ body {
     color: #00ffff;
 }
 
-.left-panel {
+.upper-panel {
     position: relative;
     background-image: url('R.jpg');
     background-size: cover;
@@ -38,7 +42,7 @@ body {
     width: 100%;
 }
 
-.left-panel h2 {
+.upper-panel h2 {
     position: absolute;
     top: 20px;
     left: 50%;
@@ -101,7 +105,7 @@ body {
     right: 20px;
 }
 
-.right-panel {
+.lower-panel {
     background-color: #010505;
     overflow: hidden; 
     display: flex;
