@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const currentLocationDisplay = document.getElementById("currentLocation");
     const todayWeatherDataContainer = document.getElementById("todayWeatherData");
-    const fiveDayForecastContainer = document.getElementById("interactiveForecast");
+    const threeDayForecastContainer = document.getElementById("interactiveForecast");
     const additionalWeatherDataContainer = document.getElementById("additionalWeatherData");
     const locationInput = document.getElementById("location");
     const apiKey = "b129b1dabde7fa81134c60c161446d16";
@@ -34,17 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
-        //update weather data on the 5-Day Forecast tab
         function updateForecastWeatherData(data) {
             const { city, list } = data;
             currentLocationDisplay.innerText = `${city.name}, ${city.country}`;
         
             let forecastHTML = `
-                <div class="five-day-forecast-heading">
+                <div class="three-day-forecast-heading">
                     ${city.name} - 3 Day Weather Forecast
                 </div>
-                <div class="five-day-forecast-grid">
+                <div class="three-day-forecast-grid">
             `;
         
             const today = new Date();
@@ -71,12 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 // Add a new row after 3rd forecast
                 if ((index + 1) % 3 === 0) {
-                    forecastHTML += `</div><div class="five-day-forecast-grid">`;
+                    forecastHTML += `</div><div class="three-day-forecast-grid">`;
                 }
             });
         
             forecastHTML += `</div>`;
-            fiveDayForecastContainer.innerHTML = forecastHTML;
+            threeDayForecastContainer.innerHTML = forecastHTML;
         }
 
         //update weather data on the 5-Day Forecast tab

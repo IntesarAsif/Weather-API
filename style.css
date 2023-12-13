@@ -121,7 +121,7 @@ body {
 }
 
 
-.five-day-forecast-container {
+.three-day-forecast-container {
     max-height: 300px; 
     overflow-y: auto;
     display: flex;
@@ -130,13 +130,13 @@ body {
     justify-content: center; 
 }
 
-.five-day-forecast-heading {
+.three-day-forecast-heading {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px;
 }
 
-.five-day-forecast-grid {
+.three-day-forecast-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     grid-gap: 10px; 
@@ -147,24 +147,4 @@ body {
     padding: 10px;
     border: 1px solid #fffefe;
     border-radius: 5px;
-}
-.additional-weather {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-
-.interactive-forecast-item {
-    cursor: pointer;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.interactive-forecast-item:hover {
-    background-color: rgba(254, 254, 254, 0.2);
 }
